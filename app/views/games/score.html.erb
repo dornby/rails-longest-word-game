@@ -1,0 +1,12 @@
+<h1>Result</h1>
+<% if !@word_meets_grid%>
+  Sorry but <b><%= @word.upcase %></b> can't be built out of <%= @letters.join(', ') %>.
+<% elsif !@word_exists %>
+  Sorry but <b><%= @word.upcase %></b> doesn't seem to be an English word.
+<% else %>
+  Congratulations! <b><%= @word.upcase %></b> is an English word.
+  Your score is <%= @score.round %>/10.
+<% end %>
+<br>
+<br>
+<%= link_to "Play again", new_path %>
